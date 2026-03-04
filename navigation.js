@@ -1,47 +1,57 @@
-const navTemplate = document.createElement('template');
-navTemplate.innerHTML = `
+const navigationTemplate = document.createElement('template');
+navigationTemplate.innerHTML = `
   <style>
-    :host {
-        display: block;
-        width: 100%;
-        background: linear-gradient(90deg, var(--primary-color, #6a11cb), var(--secondary-color, #2575fc));
-        box-shadow: 0 4px 12px var(--shadow-color, rgba(0, 0, 0, 0.15));
-        padding: 1rem 2rem;
-        border-radius: 0 0 12px 12px;
-        margin-bottom: 2rem;
-        box-sizing: border-box;
-    }
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px var(--shadow-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .logo a {
-      color: var(--text-color, #ffffff);
-      text-decoration: none;
-      font-size: 1.8rem;
-      font-weight: 700;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
     }
     .nav-links a {
-      color: var(--text-color, #ffffff);
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 400;
-      transition: opacity 0.3s ease;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.1rem;
+        position: relative;
+        padding-bottom: 5px;
+        transition: color 0.3s;
     }
-    .nav-links a:hover {
-      opacity: 0.8;
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-color);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s;
+    }
+    .nav-links a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }
   </style>
   <nav>
     <div class="logo">
-      <a href="/">Showcase</a>
+      <a href="/">Web Showcase</a>
     </div>
     <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+        <a href="/">Home</a>
+        <theme-switcher></theme-switcher>
     </div>
   </nav>
 `;
@@ -50,7 +60,7 @@ class MainNavigation extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(navTemplate.content.cloneNode(true));
+    this.shadowRoot.appendChild(navigationTemplate.content.cloneNode(true));
   }
 }
 

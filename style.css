@@ -1,20 +1,39 @@
+/* Light Theme (Default) */
 :root {
   --primary-color: #6a11cb;
   --secondary-color: #2575fc;
-  --text-color: #ffffff;
+  --text-color: #333;
+  --text-color-light: #fff;
   --bg-color: #f0f2f5;
   --card-bg-color: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.1);
+  --nav-bg-color: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  --nav-text-color: var(--text-color-light);
   --font-family: 'Inter', sans-serif;
+  --texture-opacity: 0.05;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-color: #7f00ff; /* A slightly brighter purple for dark mode */
+  --secondary-color: #4a90e2; /* A brighter blue */
+  --text-color: #e0e0e0;
+  --text-color-light: #e0e0e0;
+  --bg-color: #121212;
+  --card-bg-color: #1e1e1e;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --nav-text-color: #e0e0e0;
+  --texture-opacity: 0.02;
 }
 
 body {
   font-family: var(--font-family);
   background-color: var(--bg-color);
-  background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-  color: #333;
+  background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="var(--texture-opacity)"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+  color: var(--text-color);
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -39,7 +58,7 @@ body {
 
 .page-header p {
     font-size: 1.2rem;
-    color: #667;
+    color: var(--text-color);
     margin-top: 0.5rem;
 }
 
@@ -65,4 +84,12 @@ body {
 user-profile-card {
     width: 100%;
     height: 100%;
+}
+
+/* Update navigation styles to use CSS variables */
+main-navigation {
+  --text-color: var(--nav-text-color);
+  --primary-color: var(--primary-color);
+  --secondary-color: var(--secondary-color);
+  --shadow-color: var(--shadow-color);
 }

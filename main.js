@@ -1,5 +1,6 @@
 import './user-profile-card.js';
 import './navigation.js';
+import './theme-switcher.js';
 
 class SimpleGreeting extends HTMLElement {
   constructor() {

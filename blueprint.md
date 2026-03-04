@@ -6,6 +6,13 @@ This project is a modern web application built using framework-less technologies
 
 ## Design and Features
 
+### v1.3: Dark/Light Mode Theme
+
+*   **Theme Switcher:** A `<theme-switcher>` web component is added to the main navigation, allowing users to toggle between light and dark modes.
+*   **Automatic Theme Detection:** The application automatically detects the user's system preference (`prefers-color-scheme`) for the initial theme.
+*   **Persistence:** The user's selected theme is saved in `localStorage` to persist across sessions.
+*   **CSS Variables:** The stylesheet is refactored to use CSS custom properties for colors, enabling easy theming.
+
 ### v1.2: Multi-page Application & Navigation
 
 *   **Page Structure:** The application is structured into a main page (`index.html`) acting as a gallery or list, and a detail page (`detail.html`) to show more information about a specific item.
@@ -27,22 +34,18 @@ This project is a modern web application built using framework-less technologies
 
 ## Current Plan
 
-### Request: "code1이 메인 페이지고 나머지가 상세페이지라고 이해하면 됨. 일관성있게 만들어줘." (Understand that code1 is the main page and the rest are detail pages. Make it consistent.)
+### Request: "다크모드와 화이트모드를 추가해서 git으로 push해줘." (Add dark mode and white mode and push to git.)
 
-**Interpretation:** The user wants to structure the application with a main page (like a list or gallery) and detail pages, ensuring a consistent design and navigation across them.
+**Interpretation:** The user wants to add a theme-switching capability (dark and light modes) to the application.
 
 **Steps:**
 
-1.  **Update `blueprint.md`:** Reflect the new multi-page architecture plan.
-2.  **Create `<main-navigation>` Component:** Build a reusable navigation component in `navigation.js`.
-3.  **Update `main.js`:** Import the new navigation component.
-4.  **Refactor `index.html` as Main Page:**
-    *   Incorporate the `<main-navigation>`.
-    *   Create a grid of several `<user-profile-card>` components.
-    *   Link each card to a detail page with a unique identifier (e.g., `detail.html?user=1`).
-5.  **Create `detail.html` as Detail Page:**
-    *   Create the new HTML file.
-    *   Incorporate the `<main-navigation>`.
-    *   Add a script to read the user ID from the URL and display the corresponding user's data.
-6.  **Enhance `style.css`:** Add styles for the navigation, page layouts, and ensure visual consistency.
-7.  **Review and Verify:** Check that navigation between the main and detail pages works and the layout is consistent.
+1.  **Update `blueprint.md`:** Document the new dark mode feature and implementation plan.
+2.  **Create `<theme-switcher>` Component:** Build a reusable web component in `theme-switcher.js` to handle theme toggling.
+3.  **Update `main.js`:** Import the new `theme-switcher.js` module.
+4.  **Integrate Switcher into Navigation:** Modify `navigation.js` to include the `<theme-switcher>` component in the main navigation bar.
+5.  **Refactor `style.css` for Theming:**
+    *   Define color palettes for both light and dark themes using CSS variables.
+    *   Apply a `[data-theme="dark"]` selector to switch between themes.
+    *   Update component styles to use the new color variables.
+6.  **Git Push:** Commit all changes and push them to the GitHub repository.
