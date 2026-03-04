@@ -2,192 +2,126 @@
 <html lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>시니어 맞춤 장보기 마켓</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>건강 장보기 - 프리미엄 시니어 라이프</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style type="text/tailwindcss">
         :root {
-            --navy: #1B2B48;
-            --coral: #FF7F6A;
-            --soft-grey: #F8FAFC;
-            --border-grey: #E2E8F0;
+            --active-navy: #1E293B;
+            --soft-coral: #FF7F6E;
+            --premium-bg: #FDFDFD;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
         }
         body {
-            font-family: 'Noto Sans KR', 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--soft-grey);
-            color: var(--navy);
+            font-family: 'Pretendard', sans-serif;
+            background-color: var(--premium-bg);
         }
         .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-card {
+            background: white;
+            border: 1px solid #F1F5F9;
+            box-shadow: var(--card-shadow);
         }
     </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: "#1E293B",
+                            light: "#334155",
+                            dark: "#0F172A",
+                        },
+                        coral: {
+                            DEFAULT: "#FF7F6E",
+                            light: "#FFF1F0",
+                        },
+                        background: {
+                            light: "#FDFDFD",
+                            dark: "#0F172A",
+                        }
+                    },
+                    borderRadius: {
+                        'premium': '2rem',
+                    }
+                },
+            },
+        };
+    </script>
 </head>
-<body class="antialiased text-[18px]">
-<nav class="bg-white border-b border-[var(--border-grey)] sticky top-0 z-50">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="flex items-center gap-8">
-<a href="index.html" class="text-2xl font-bold tracking-tight text-[var(--navy)]">VITALITY<span class="text-[var(--coral)]">MARKET</span></a>
-<div class="hidden md:flex items-center gap-6">
-<a class="text-slate-500 font-medium hover:text-[var(--navy)]" href="index.html">홈</a>
-<a class="text-slate-500 font-medium hover:text-[var(--navy)]" href="learn.html">취미 클래스</a>
-<a class="text-slate-500 font-medium hover:text-[var(--navy)]" href="board.html">커뮤니티</a>
-<a class="text-[var(--navy)] font-medium" href="shopping.html">쇼핑하기</a>
+<body class="bg-background-light dark:bg-background-dark text-navy dark:text-slate-100 min-h-screen">
+<aside class="fixed left-0 top-0 h-full w-72 bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800 z-50 hidden lg:flex flex-col">
+<a href="index.html" class="p-10 flex items-center gap-3">
+<div class="w-10 h-10 bg-navy dark:bg-coral rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white">temp_preferences_custom</span>
 </div>
-</div>
-<div class="flex items-center gap-6">
-<div class="relative group">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
-<input class="pl-10 pr-4 py-2.5 bg-slate-50 border-none rounded-full w-64 focus:ring-2 focus:ring-[var(--navy)] text-base" placeholder="오늘은 어떤 식재료를 찾으시나요?" type="text"/>
-</div>
-<button class="relative p-2 text-[var(--navy)]">
-<span class="material-symbols-outlined text-2xl">shopping_cart</span>
-<span class="absolute -top-0.5 -right-0.5 bg-[var(--coral)] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">3</span>
-</button>
-<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border border-slate-100">
-<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWfnmlexCQMm4ihlGxAAHjCScH-MSzmvKW51UWxgs56XBslruvjQLoLqlGVCU9lN3UDTNjfI7tHo1VlZAG3MNA9u6YYk4XHQoE9dIHRc6FCWKZ6K3QFVjhCo6zfcSJsivK7efYpCQB2QJkQRPiczMoG1yhWWQ1loWYK2r87vSSKpMd2Qvee2SrT2mDnzGhR4uTtAk_mrk0fzyNg0a7W1miH16i_vxUZgK_ZYWkKospp8e58Axg-gbpGcbB3XdIefYfNm8mwu40TiUW"/>
-</div>
-</div>
-</div>
-</nav>
-<main class="max-w-7xl mx-auto px-6 py-8">
-<header class="mb-12">
-<h1 class="text-4xl font-bold text-[var(--navy)] mb-2">시니어 맞춤 장보기 마켓</h1>
-<p class="text-slate-500 text-lg">액티브 시니어를 위한 엄선된 건강 식재료를 만나보세요.</p>
-</header>
-<div class="flex flex-wrap gap-3 mb-12">
-<button class="px-6 py-2.5 rounded-full border-2 border-[var(--navy)] bg-white text-[var(--navy)] font-semibold text-base transition-all">전체 상품</button>
-<button class="px-6 py-2.5 rounded-full border border-[var(--border-grey)] bg-white text-slate-600 font-medium text-base hover:border-[var(--navy)] hover:text-[var(--navy)] transition-all">유기농 채소</button>
-<button class="px-6 py-2.5 rounded-full border border-[var(--border-grey)] bg-white text-slate-600 font-medium text-base hover:border-[var(--navy)] hover:text-[var(--navy)] transition-all">2인용 밀키트</button>
-<button class="px-6 py-2.5 rounded-full border border-[var(--border-grey)] bg-white text-slate-600 font-medium text-base hover:border-[var(--navy)] hover:text-[var(--navy)] transition-all">건강 선물세트</button>
-<button class="px-6 py-2.5 rounded-full border border-[var(--border-grey)] bg-white text-slate-600 font-medium text-base hover:border-[var(--navy)] hover:text-[var(--navy)] transition-all">영양 보조제</button>
-<button class="px-6 py-2.5 rounded-full border border-[var(--border-grey)] bg-white text-slate-600 font-medium text-base hover:border-[var(--navy)] hover:text-[var(--navy)] transition-all">유제품 &amp; 달걀</button>
-</div>
-<section class="mb-16">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-[var(--border-grey)]">
-<div class="h-[400px] lg:h-auto relative">
-<img alt="Organic Harvest Basket" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuButnC8Deeej6jbJTqGI5RfNRUykQ4s0En6Fy8CFeY55knf21QJIi1jgONtw4pUopk1HY45DdLK8qxhTUDJHvCwRXh2FTdyjGIC5jNyEZX-8D5TWN0qQeXxfIrXrQnjMWycKHv-iuDyntp4ifVs7HC-4Mch0S8mrnrlqoPvrS3i90Psay4JZgGPeUngcmHbRuDt6lKxV-08yf6CsOwGjhNkoeFthkiTlzTDauaevMQA6OicJhyizk3vX61YkWUtvVVCudS89qCT--w_"/>
-<div class="absolute top-6 left-6">
-<span class="bg-[var(--coral)] text-white px-4 py-1.5 rounded-full text-sm font-bold tracking-wide">이번 주 특가</span>
-</div>
-</div>
-<div class="p-12 flex flex-col justify-center">
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-[var(--coral)]">star</span>
-<span class="text-sm font-bold text-slate-400 tracking-widest uppercase">인기 추천 상품</span>
-</div>
-<h2 class="text-4xl font-bold mb-4 leading-tight">제철 유기농 건강 채소 바구니</h2>
-<p class="text-slate-500 text-lg mb-8 leading-relaxed">식이섬유가 풍부한 뿌리 채소와 항산화 성분이 가득한 잎채소를 엄선했습니다. 시니어 2인 가구의 일주일 식단에 최적화된 구성입니다.</p>
-<div class="flex items-end gap-4 mb-8">
-<span class="text-4xl font-bold text-[var(--navy)]">34,500원</span>
-<span class="text-xl text-slate-400 line-through mb-1">42,000원</span>
-</div>
-<button class="bg-[var(--navy)] text-white px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-3">
-<span class="material-symbols-outlined">shopping_basket</span>
-                    장바구니 담기
-                </button>
-</div>
-</div>
-</section>
-<section>
-<div class="flex items-center justify-between mb-8">
-<h3 class="text-2xl font-bold">이번 주 인기 상품</h3>
-<a class="text-[var(--coral)] font-semibold flex items-center gap-1 hover:underline" href="#">
-                전체보기 <span class="material-symbols-outlined text-base">arrow_forward</span>
+<span class="text-2xl font-extrabold tracking-tight text-navy dark:text-white">ActiveLife</span>
 </a>
+<nav class="flex-1 px-6 space-y-3">
+<a class="flex items-center gap-4 px-5 py-4 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-2xl transition-all" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-bold text-xl">홈</span>
+</a>
+<a class="flex items-center gap-4 px-5 py-4 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-2xl transition-all" href="health.html">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-bold text-xl">건강</span>
+</a>
+<a class="flex items-center gap-4 px-5 py-4 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-2xl transition-all" href="board.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-bold text-xl">커뮤니티</span>
+</a>
+<a class="flex items-center gap-4 px-5 py-4 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-2xl transition-all" href="learn.html">
+<span class="material-symbols-outlined">school</span>
+<span class="font-bold text-xl">취미 클래스</span>
+</a>
+<a class="flex items-center gap-4 px-5 py-4 bg-navy dark:bg-white text-white dark:text-navy rounded-2xl shadow-lg shadow-navy/10 transition-all" href="shopping.html">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-bold text-xl">건강 장보기</span>
+</a>
+<a class="flex items-center gap-4 px-5 py-4 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-2xl transition-all" href="jobs.html">
+<span class="material-symbols-outlined">business_center</span>
+<span class="font-bold text-xl">일자리 찾기</span>
+</a>
+</nav>
+<div class="p-8 border-t border-slate-50 dark:border-slate-800">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Profile" class="w-14 h-14 rounded-full border-2 border-coral object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn6Dis4YxpBARTjnPBdW4wT7ussj7CwHaSWAyXt53Fif9am0Cq4aDdNGnuBqoPjvcBUT8PgtRCFbwrVKhNKaZ8piVK1aOUAe-nWu6T4zhb7gZ0HkN0uJidkFTP2gD9FjJcp_fhmH1FT-sWzlzhFRDi-CRlQyqRfYboFtUozmuEi3MCVVMmmjNuQut3-GDZrcXajHMPPFBRplVhox9npdZctbfBYIrwNyvf1yD9mzppGzGf5yg4MqZruQeqBQ4XEtZl-I6qjIo4zlKt"/>
+<div>
+<p class="font-bold text-lg">홍길동 님</p>
+<p class="text-sm text-slate-400">프리미엄 골드 회원</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="bg-white rounded-2xl border border-[var(--border-grey)] overflow-hidden group">
-<div class="relative aspect-square overflow-hidden bg-slate-50">
-<img alt="Fresh Kale" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_TES7QAKiiJ-X2PU7bGcSsWiLsyrXuw2ZYLWfjjOj1qO60fAPUqcYHLHYXwEKd-SkVmYqaMVe0CrcjhdrRX-BMZIuFpCAYNa0z7Xuc1tMVVaGmvlKMnMeIbZkwUX8lx2U8cW2mZuPwboc-ltV12gU1fK83nPd-zHiQiUXlng2xv7UImK6_0OcXjdouIiz77UoyExqrvblxedaNikxSuzaJXEjzYwOwF0ay362jBcr2CLzBdlckFQiRUsNLOPoQ1kpIxkyHZ7GrQs5"/>
-<span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-md text-xs font-bold text-[var(--navy)] border border-slate-100 uppercase tracking-wider">유기농</span>
 </div>
-<div class="p-6">
-<p class="text-sm text-slate-400 font-medium mb-1">유기농 채소</p>
-<h4 class="font-bold text-xl mb-4 h-14 line-clamp-2">곱슬 케일 &amp; 어린 시금치 믹스</h4>
-<div class="flex items-center justify-between">
-<span class="text-2xl font-bold text-[var(--navy)]">6,800원</span>
-<button class="w-12 h-12 rounded-xl bg-[var(--navy)] text-white flex items-center justify-center hover:bg-slate-800 transition-colors" title="장바구니 담기">
-<span class="material-symbols-outlined">add</span>
+<button class="w-full flex items-center justify-center gap-2 py-4 border border-slate-100 dark:border-slate-700 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="font-bold">설정</span>
 </button>
 </div>
+</aside>
+<main class="lg:ml-72 p-6 lg:p-14">
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-14">
+<div>
+<h1 class="text-5xl font-extrabold text-navy dark:text-white leading-tight">신선하고 건강한 <span class="text-coral">식료품</span></h1>
+<p class="text-slate-500 mt-2 text-lg">엄선된 제철 식재료와 간편한 밀키트를 만나보세요.</p>
 </div>
-</div>
-<div class="bg-white rounded-2xl border border-[var(--border-grey)] overflow-hidden group">
-<div class="relative aspect-square overflow-hidden bg-slate-50">
-<img alt="Salmon Kit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuvpL32XaG_8N4oPasIN49LwBggWd6iZj0PumOtcpqlQ9z2GV9UC8DUzZ4Xu91DQIiwciJ1-DW1Dc2RNss1VykJyCPRypS5LZGBLtm3beiBpgU5tFHL59HAwGdqIlC9qK-AS4exzD0YfznQVqFZDcqghbKhvDJH-tIZNFk5SGDWLpyHj1I_XnwEDIWoFkZhq17tcyz_lx93WGS2OECw1NoZ_Fd6YOl0oop_xI7-gg6Nlu7Gh3jBdD_cu6v3LTGxwyS1pzhhRuRO3su"/>
-<span class="absolute top-4 left-4 bg-[var(--navy)] text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">2인용 밀키트</span>
-</div>
-<div class="p-6">
-<p class="text-sm text-slate-400 font-medium mb-1">저염식</p>
-<h4 class="font-bold text-xl mb-4 h-14 line-clamp-2">아스파라거스를 곁들인 대서양 연어 스테이크</h4>
-<div class="flex items-center justify-between">
-<span class="text-2xl font-bold text-[var(--navy)]">24,000원</span>
-<button class="w-12 h-12 rounded-xl bg-[var(--navy)] text-white flex items-center justify-center hover:bg-slate-800 transition-colors" title="장바구니 담기">
-<span class="material-symbols-outlined">add</span>
+<div class="flex items-center gap-5">
+<button class="relative w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center premium-card">
+<span class="material-symbols-outlined text-navy dark:text-slate-300 text-3xl">shopping_cart</span>
+<span class="absolute top-4 right-4 w-3 h-3 bg-coral border-2 border-white dark:border-slate-800 rounded-full"></span>
+</button>
+<button class="w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center premium-card">
+<span class="material-symbols-outlined text-navy dark:text-slate-300 text-3xl">search</span>
 </button>
 </div>
-</div>
-</div>
-<div class="bg-white rounded-2xl border border-[var(--border-grey)] overflow-hidden group">
-<div class="relative aspect-square overflow-hidden bg-slate-50">
-<img alt="Honey Selection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBgoxtNI6ImX2fTZeaTnCy5L30TLQHEfqyfwwNlFsf_NH4pqrrUORUntwI6uY82jT1PD8km5-3f7DLNxF5DWOddZL7duG0XBDvz6hkQ19SC8teP_a9RDgny2eu21DoQwjAfNZyg3bU-5W2vE6ETwtgac3BK-iIto2eN0Qm3wX87RRwmdYEpAeq9DLR6sI__eciNq8dCoZGDyKjD7RiauVrLzZwrclyyG9Mq1huylDqroqQ7crB5R8RHVupOj993DAcP0dUbi8FmpEt"/>
-<span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-md text-xs font-bold text-[var(--navy)] border border-slate-100 uppercase tracking-wider">선물세트</span>
-</div>
-<div class="p-6">
-<p class="text-sm text-slate-400 font-medium mb-1">건강 선물세트</p>
-<h4 class="font-bold text-xl mb-4 h-14 line-clamp-2">장인 엄선 마누카 꿀 디스커버리 세트</h4>
-<div class="flex items-center justify-between">
-<span class="text-2xl font-bold text-[var(--navy)]">45,000원</span>
-<button class="w-12 h-12 rounded-xl bg-[var(--navy)] text-white flex items-center justify-center hover:bg-slate-800 transition-colors" title="장바구니 담기">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-</div>
-</div>
-<div class="bg-white rounded-2xl border border-[var(--border-grey)] overflow-hidden group">
-<div class="relative aspect-square overflow-hidden bg-slate-50">
-<img alt="Vitamins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsdUTauAeNgaeUeFiIg2KDDx5crySLb7NEM9OBkSaK0hyPGfu9TYF36lLzWrRUgjud9LcZdEOCanc_FVa5pLCfKg08IaeO3j6WP7fXzvq7YitL7ijHV_YsQTBALbn2ZUu5_FVbT_Z3qqPdYkfg8Ws6beyLmF-2tb6cGsEbu1BPvg2_zJA9cstOb52Ezi25hL059judpnPM8V_korbuI31g2WypV_sS0_kHtHgFeiN1GU9GZjTUo8c0DQdAhcalFBXdQWeAaUPVFSPW"/>
-<span class="absolute top-4 left-4 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">심혈관 건강</span>
-</div>
-<div class="p-6">
-<p class="text-sm text-slate-400 font-medium mb-1">영양제</p>
-<h4 class="font-bold text-xl mb-4 h-14 line-clamp-2">오메가-3 트리플 스트렝스 (90캡슐)</h4>
-<div class="flex items-center justify-between">
-<span class="text-2xl font-bold text-[var(--navy)]">18,900원</span>
-<button class="w-12 h-12 rounded-xl bg-[var(--navy)] text-white flex items-center justify-center hover:bg-slate-800 transition-colors" title="장바구니 담기">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="mt-20 mb-12">
-<div class="bg-[var(--navy)] rounded-3xl p-12 text-center relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-[var(--coral)] opacity-10 rounded-full -mr-32 -mt-32"></div>
-<div class="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
-<h3 class="text-3xl font-bold text-white mb-4 relative z-10">맞춤형 영양 상담 서비스</h3>
-<p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto relative z-10">시니어 영양 전문가와 상담하여 건강 목표에 맞춘 개인별 장보기 리스트를 구성해보세요.</p>
-<button class="bg-[var(--coral)] text-white px-8 py-3.5 rounded-xl font-bold text-base hover:opacity-90 transition-all relative z-10">
-                무료 15분 상담 예약하기
-            </button>
-</div>
-</section>
+</header>
+
 </main>
-<footer class="bg-white border-t border-[var(--border-grey)] py-12 mt-20">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex flex-col gap-2">
-<span class="text-xl font-bold text-[var(--navy)]">VITALITY<span class="text-[var(--coral)]">MARKET</span></span>
-<p class="text-sm text-slate-400">© 2024 Vitality Market. 건강한 시니어 라이프를 응원합니다.</p>
-</div>
-<div class="flex gap-8">
-<a class="text-slate-500 hover:text-[var(--navy)] text-sm font-medium" href="#">개인정보 처리방침</a>
-<a class="text-slate-500 hover:text-[var(--navy)] text-sm font-medium" href="#">배송 정보</a>
-<a class="text-slate-500 hover:text-[var(--navy)] text-sm font-medium" href="#">접근성 안내</a>
-<a class="text-slate-500 hover:text-[var(--navy)] text-sm font-medium" href="#">고객 센터</a>
-</div>
-</div>
-</footer>
+<button class="fixed bottom-32 lg:bottom-10 right-10 w-16 h-16 bg-navy dark:bg-white text-white dark:text-navy rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 active:scale-95" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-3xl">dark_mode</span>
+</button>
 
 </body></html>
