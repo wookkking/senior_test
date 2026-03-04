@@ -1,51 +1,40 @@
-# Project Blueprint
 
-## Overview
+# 프로젝트 청사진: 시니어 라이프스타일 플랫폼
 
-This project is a modern web application built using framework-less technologies, including Web Components, modern CSS, and ES Modules. The goal is to create a visually appealing, interactive, and accessible user experience following the guidelines in `GEMINI.md`.
+## 개요
 
-## Design and Features
+이 프로젝트는 시니어 사용자를 위한 포괄적인 라이프스타일 웹 애플리케이션입니다. 사용자의 참여와 편의성을 높이기 위해 직관적인 탐색 기능을 갖춘 여러 핵심 기능을 제공합니다. 이 문서는 프로젝트의 구조, 기능 및 개발 계획에 대한 개요를 설명합니다.
 
-### v1.3: Dark/Light Mode Theme
+## 프로젝트 구조
 
-*   **Theme Switcher:** A `<theme-switcher>` web component is added to the main navigation, allowing users to toggle between light and dark modes.
-*   **Automatic Theme Detection:** The application automatically detects the user's system preference (`prefers-color-scheme`) for the initial theme.
-*   **Persistence:** The user's selected theme is saved in `localStorage` to persist across sessions.
-*   **CSS Variables:** The stylesheet is refactored to use CSS custom properties for colors, enabling easy theming.
+이 애플리케이션은 네 가지 주요 HTML 파일로 구성되어 있으며, 각 파일은 특정 목적을 수행합니다.
 
-### v1.2: Multi-page Application & Navigation
+- `index.html`: 사용자를 위한 개인화된 대시보드 역할을 하는 기본 진입점입니다.
+- `learn.html`: 시니어의 관심사에 맞춘 다양한 취미 수업과 교육 콘텐츠를 제공합니다.
+- `board.html`: 사용자가 소통하고, 정보를 공유하고, 커뮤니티를 형성할 수 있는 커뮤니티 게시판입니다.
+- `shopping.html`: 건강과 웰빙에 중점을 둔 선별된 제품을 제공하는 온라인 마켓입니다.
 
-*   **Page Structure:** The application is structured into a main page (`index.html`) acting as a gallery or list, and a detail page (`detail.html`) to show more information about a specific item.
-*   **Consistent Navigation:** A `<main-navigation>` web component has been created and added to all pages to ensure a consistent look, feel, and user experience.
-*   **Data-driven Content:** The main page displays multiple user profiles. The detail page dynamically displays content based on a URL query parameter (`?user=...`), although the data is currently hardcoded in the script.
-*   **Layout:** The main page uses a responsive grid layout to display profile cards.
+## 디자인 및 기능
 
-### v1.1: Enhanced Visuals and New Component
+### 탐색
 
-*   **Design Improvements:** Applied a more visually appealing design using textures, shadows, colors, and fonts as per `GEMINI.md`.
-*   **`<user-profile-card>` Web Component:** Introduced a new web component to display user profiles, utilizing `<slot>` for content projection.
-*   **Enhanced Styling:** Added styles for the new component and improved the overall page design.
+원활한 사용자 경험을 보장하기 위해 모든 페이지에 일관된 탐색 메뉴가 구현되었습니다. 각 페이지의 헤더에는 다음 링크가 포함되어 있습니다.
 
-### Initial Version (v1.0)
+- **홈** (`index.html`)
+- **취미 클래스** (`learn.html`)
+- **커뮤니티** (`board.html`)
+- **쇼핑** (`shopping.html`)
 
-*   **Core Structure:** `index.html`, `style.css`, `main.js`.
-*   **Components:** `<simple-greeting>`.
-*   **Styling:** Basic modern CSS.
+이 구조를 통해 사용자는 애플리케이션의 어느 위치에서든 모든 주요 섹션에 쉽게 접근할 수 있습니다.
 
-## Current Plan
+### 현재 변경 사항: 파일 이름 변경 및 링크 업데이트
 
-### Request: "다크모드와 화이트모드를 추가해서 git으로 push해줘." (Add dark mode and white mode and push to git.)
+이 업데이트에서는 프로젝트의 명확성과 구성을 개선하는 데 중점을 두었습니다.
 
-**Interpretation:** The user wants to add a theme-switching capability (dark and light modes) to the application.
-
-**Steps:**
-
-1.  **Update `blueprint.md`:** Document the new dark mode feature and implementation plan.
-2.  **Create `<theme-switcher>` Component:** Build a reusable web component in `theme-switcher.js` to handle theme toggling.
-3.  **Update `main.js`:** Import the new `theme-switcher.js` module.
-4.  **Integrate Switcher into Navigation:** Modify `navigation.js` to include the `<theme-switcher>` component in the main navigation bar.
-5.  **Refactor `style.css` for Theming:**
-    *   Define color palettes for both light and dark themes using CSS variables.
-    *   Apply a `[data-theme="dark"]` selector to switch between themes.
-    *   Update component styles to use the new color variables.
-6.  **Git Push:** Commit all changes and push them to the GitHub repository.
+1.  **파일 이름 변경**: 더 나은 명확성을 위해 다음과 같이 파일 이름을 변경했습니다.
+    - `메인코드.html` -> `index.html`
+    - `게시판코드.html` -> `board.html`
+    - `장보기코드.html` -> `shopping.html`
+    - `배움코드.html` -> `learn.html`
+2.  **탐색 링크 업데이트**: 모든 탐색 메뉴의 링크가 새 파일 이름을 정확하게 가리키도록 업데이트되었습니다.
+3.  **정리**: 이전의 한국어 파일 이름은 프로젝트에서 삭제하여 깔끔하고 체계적인 파일 구조를 유지했습니다.

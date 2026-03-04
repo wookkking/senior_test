@@ -1,0 +1,276 @@
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>시니어라이프 - 시니어 취미 및 교육 클래스</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e293b",
+                        "accent": "#ff7f50",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "Noto Sans KR", "sans-serif"],
+                        "sans": ["Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans KR', 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 md:px-20 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary dark:text-accent">
+<a href="index.html" class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl">elderly</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">시니어라이프</h2>
+</a>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-accent text-sm font-medium transition-colors" href="index.html">홈</a>
+<a class="text-primary dark:text-accent border-b-2 border-primary dark:border-accent text-sm font-bold transition-colors py-1" href="learn.html">취미 클래스</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-accent text-sm font-medium transition-colors" href="board.html">커뮤니티</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-accent text-sm font-medium transition-colors" href="shopping.html">쇼핑</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden lg:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-400 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-slate-800 focus:border-none h-full placeholder:text-slate-500 px-4 rounded-l-none pl-2 text-sm font-normal" placeholder="취미를 찾아보세요..." value=""/>
+</div>
+</label>
+<button class="flex items-center justify-center rounded-full size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden border-2 border-slate-100 dark:border-slate-700">
+<img alt="프로필 이미지" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKBEkZ9JWnaFgfOF9LaV34ACMFv5_0GFJVTQhX1gyfz2h_R1BIOXWSUWU98NgOovZQoBq0LEaj9nPDiD1qxWGrICSy7uKbnnJDufr-UCwLeNafuLvVuycmauijrtEnYEi4HSe_ErM6Swim7YNchOHXPR54c2dC9OD-poq6W9VL6roMWJaoTWVzyJwLbv3gCMhNn7DS9XrdyjHHMIqPsVe0Zn8ME0__sa17JbFFpIfXoUUwtuzlOotwWRNmQ8A6FvYYeOfklIN2gE6b"/>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<div class="px-6 md:px-20 py-8">
+<div class="relative overflow-hidden rounded-xl bg-primary dark:bg-slate-900 min-h-[420px] flex items-center">
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="배경 이미지" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD-mJiDr1uPy8QIxaunoUOYlxyDb6mN0q34Id1lGfFea0z4fouWJDbpPX0k6KXNBoD9mJLJedlbuq0iXuvGdwRQG5HutuALel_OdA3M6cpyP-rpuapAi3q0zhv-m1GfR9vt7-0swf9ypwCsWSAPVj_KBOB54c6D_wONyhjhqJuiuVHZBU-uUiicWrgaSgT3bmVMxFs0aTPAiP4h-lY7jjvdiuy0B-C6-Ec3lHRKuWQ_mIZyTot2pIibXv_Rsc0x9KdF6p6-shgY_sE"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+</div>
+<div class="relative z-10 px-8 md:px-16 flex flex-col gap-6 max-w-2xl">
+<span class="bg-accent/20 text-accent font-semibold text-xs uppercase tracking-widest px-3 py-1 rounded-full self-start">봄 시즌 신규 강좌</span>
+<h1 class="text-white text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                            오늘 새로운 배움을 시작해보세요!
+                        </h1>
+<p class="text-slate-200 text-lg md:text-xl font-light leading-relaxed">
+                            당신의 라이프스타일과 관심사에 맞춘 즐거운 취미 클래스를 만나보세요. 평생 학습의 즐거움을 함께 나눕니다.
+                        </p>
+<div class="flex gap-4">
+<button class="bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-bold text-base transition-all shadow-lg shadow-accent/20">
+                                클래스 탐색하기
+                            </button>
+<button class="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md px-8 py-3 rounded-lg font-bold text-base transition-all border border-white/20">
+                                무료 체험하기
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<div class="px-6 md:px-20 py-10">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">카테고리별 탐색</h2>
+<a class="text-accent font-semibold hover:underline flex items-center gap-1" href="#">전체 보기 <span class="material-symbols-outlined text-sm">arrow_forward_ios</span></a>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col items-center p-8 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-accent transition-all cursor-pointer group shadow-sm">
+<div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary dark:text-slate-300 group-hover:text-accent transition-colors">smartphone</span>
+</div>
+<h3 class="font-bold text-lg text-slate-800 dark:text-slate-100">디지털/스마트폰</h3>
+<p class="text-slate-500 text-sm mt-1">기기 사용법 마스터하기</p>
+</div>
+<div class="flex flex-col items-center p-8 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-accent transition-all cursor-pointer group shadow-sm">
+<div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary dark:text-slate-300 group-hover:text-accent transition-colors">self_improvement</span>
+</div>
+<h3 class="font-bold text-lg text-slate-800 dark:text-slate-100">건강/요가</h3>
+<p class="text-slate-500 text-sm mt-1">유연하고 튼튼하게</p>
+</div>
+<div class="flex flex-1 flex-col items-center p-8 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-accent transition-all cursor-pointer group shadow-sm">
+<div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary dark:text-slate-300 group-hover:text-accent transition-colors">palette</span>
+</div>
+<h3 class="font-bold text-lg text-slate-800 dark:text-slate-100">미술/캘리그래피</h3>
+<p class="text-slate-500 text-sm mt-1">나만의 창의성 표현하기</p>
+</div>
+<div class="flex flex-col items-center p-8 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-accent transition-all cursor-pointer group shadow-sm">
+<div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary dark:text-slate-300 group-hover:text-accent transition-colors">music_note</span>
+</div>
+<h3 class="font-bold text-lg text-slate-800 dark:text-slate-100">음악/악기</h3>
+<p class="text-slate-500 text-sm mt-1">나만의 리듬 찾기</p>
+</div>
+</div>
+</div>
+<div class="px-6 md:px-20 pb-20">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-8">추천 클래스</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-800 flex flex-col group">
+<div class="relative h-64 overflow-hidden">
+<img alt="요가 클래스" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA-7rv0D_6tYB8cBpe8tDx1EcjxgLZnnqXHzXsuHF7D_MdPmmV1MD0oYFwEmRfLRfrpnlaA_EHz-1ZsPMhaCyANpitwA33zN2JYOBQfQlAYkIEmDkgqI9W7OZ5PwTRyD1QKVkfdlybQjRXzes2tt7dPe9BYRTUz2W4yVS6e28f-xNSwUoryS85pRFnF0LlGTf3BlT9A47tJ_NOVRscCnqDvvRFvVCu7WHm7D70EtBl9brRxZN27_9Oac9yZbkuIrEoeGHJGGYCYT0a"/>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded text-xs font-bold text-primary dark:text-accent shadow-sm">
+                                초보 환영
+                            </div>
+<div class="absolute top-4 right-4 bg-accent px-3 py-1 rounded text-xs font-bold text-white shadow-sm">
+                                현재 실시간
+                            </div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-100">
+<img alt="강사 이미지" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp0uX5gH_qE8KjF0QJW5UtYRq9VvEB6_pGRvIZjqEfQEyHSD2-H4X-DC1SdPidnGs7aBT3rcCvBQIxTi2BHyw7_Ji02LwJs3cDjbgTYFmNb8Vo3uWG4OqqGvfASnNr2eVFfyLzZQg6oSQfkxUeQ93O8F6aqmFXFjFI79O5h-hC1u4CwiDuXc-kfUoDu-a5h_kBj_bOiiQP9zDcJuaIIiHVN1xbZEHXfxkA_G59TkjfGl2M3jqzIrO2PzX_DQtKpKJIB6leLUm1iqnN"/>
+</div>
+<span class="text-slate-600 dark:text-slate-400 text-sm font-medium">강사: 아서 첸 교수</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">기초 의자 요가</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-6">앉은 자세에서 할 수 있는 부드러운 스트레칭과 가동성 운동입니다. 데일리 웰니스에 완벽합니다.</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 uppercase tracking-tighter">소요 시간</span>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">45분</span>
+</div>
+<button class="bg-primary dark:bg-slate-800 text-white dark:text-white px-6 py-2.5 rounded-lg font-bold hover:bg-slate-700 transition-colors shadow-lg shadow-primary/10">
+                                    수강 신청하기
+                                </button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-800 flex flex-col group">
+<div class="relative h-64 overflow-hidden">
+<img alt="스마트폰 교육" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbYDtgB06VCoNwNQRsSaH4Mn_W84Z8QbAYZx2hi_9x9_enf5QkRpYLuo2fpQKO7OcdkXWdmoltVa0PCRp4_ToS9iIsNtCSXybWebUCVcgHApNbgcDPb8w-ZHysdh_LQG99Q8okDlFlQ2gtwG4IKkAai5TLt2g8ikykMxoh87WFfowRLB8qJDeclwjkuguJ8uKN_vM1R1PalW7DjHE08bqkS8R3o1KZlsFNqA5maVFiJvlzllkJtLirxDno-aVQyUUh6ZS1AB9TF0_4"/>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded text-xs font-bold text-primary dark:text-accent shadow-sm">
+                                초보 환영
+                            </div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-100">
+<img alt="강사 이미지" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz0e6uE-TmwEM0sLmn1ybZwM5492d3zomaTUVsjyaJDjyVMKlaW5stLARR0DxKZUr_oCzIWVLY3S2AOios7rs6rHV8P--T3Q5WlR0Equ0_2nIglzzCPfMJF6dLNidKFGM0IAibL8vqsNkhtKlzWclMP1J8pW45aC5SqjT5bC03LURaTZz-lhj1OhZdSFjtje4qn7FHjjp7dB55_FNFkj8-VBD5H0yFv_-CCMwSArvuGBxE0aT_DVxTP1rlinMXAayOElNCZ8r-cxah"/>
+</div>
+<span class="text-slate-600 dark:text-slate-400 text-sm font-medium">강사: 사라 밀러</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">영상 통화 마스터하기</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-6">줌, 페이스타임, 와츠앱으로 손주들과 쉽게 소통하는 방법을 단계별로 배워보세요.</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 uppercase tracking-tighter">소요 시간</span>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">60분</span>
+</div>
+<button class="bg-primary dark:bg-slate-800 text-white dark:text-white px-6 py-2.5 rounded-lg font-bold hover:bg-slate-700 transition-colors shadow-lg shadow-primary/10">
+                                    수강 신청하기
+                                </button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-800 flex flex-col group">
+<div class="relative h-64 overflow-hidden">
+<img alt="수채화 수업" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHlovaHjSWk5XcvjCHThNx8SCOlwEtgS6Ca5cTL9I_CHScJZA69y0_y3BWWBY5JFDyvSqJewJ0FETU40QsI-_Znh3M4HOiXXudfrN-kVw79GGAZo7CuW7VNw6aSwGRRA0nGpr4Mi-A4xj2-fkZx1zuLYXLOJYr4cqHFB82z_ycj_St499zzMedj9hEyDdUp1bEEwjjFtpjW23T2-A6L-LfvfPhx1m5CxeO6VzofbDxX1VQ2butM2b5cNRAOFcgQErP4hiRdviOtvPN"/>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded text-xs font-bold text-primary dark:text-accent shadow-sm">
+                                모든 레벨
+                            </div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-100">
+<img alt="강사 이미지" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuavvtlidMf4euAu3ZYYjcpdS3fftgWggQQmyzrVJvpGBYqtjkRw5tDFrxED4eTlkeW6W6GiJ5LRGpIRiq8NDna6fGg3ifvK5fetRt3Paftw1WMLj7z79p3sBBnl_sEKoQW_EScPBf7JKr4sxgHX3jJJWodbDiXD6L-mu4RDGLnRowhGDCH3RYUnhEfBHVDx1wgN-iF3DIgxofwrA75IKh8RmSkQapcsxT9veDJpxypoXYu-cFKxRwy0xYVGHz1Ose7rxfwFSwqWeb"/>
+</div>
+<span class="text-slate-600 dark:text-slate-400 text-sm font-medium">강사: 로버트 밴스</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">아침 수채화 교실</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-6">차분한 수채화의 세계를 탐험하세요. 마음의 평화를 위한 보태니컬 아트와 풍경화에 집중합니다.</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 uppercase tracking-tighter">소요 시간</span>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">90분</span>
+</div>
+<button class="bg-primary dark:bg-slate-800 text-white dark:text-white px-6 py-2.5 rounded-lg font-bold hover:bg-slate-700 transition-colors shadow-lg shadow-primary/10">
+                                    수강 신청하기
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-slate-900 dark:bg-slate-950 text-slate-400 py-12 px-6 md:px-20 border-t border-slate-800">
+<div class="flex flex-col md:flex-row justify-between gap-10">
+<div class="max-w-sm">
+<div class="flex items-center gap-3 text-white mb-6">
+<span class="material-symbols-outlined text-3xl">elderly</span>
+<h2 class="text-xl font-bold leading-tight">시니어라이프</h2>
+</div>
+<p class="text-sm leading-relaxed mb-6">평생 학습과 커뮤니티 참여를 통해 시니어들이 활동적이고 연결된, 충만한 삶을 영위할 수 있도록 돕습니다.</p>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold text-sm">플랫폼</h4>
+<a class="text-sm hover:text-white" href="#">클래스</a>
+<a class="text-sm hover:text-white" href="#">커뮤니티</a>
+<a class="text-sm hover:text-white" href="#">성공 스토리</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold text-sm">회사 소개</h4>
+<a class="text-sm hover:text-white" href="#">회사 개요</a>
+<a class="text-sm hover:text-white" href="#">채용</a>
+<a class="text-sm hover:text-white" href="#">블로그</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold text-sm">고객 지원</h4>
+<a class="text-sm hover:text-white" href="#">헬프 센터</a>
+<a class="text-sm hover:text-white" href="#">개인정보 처리방침</a>
+<a class="text-sm hover:text-white" href="#">문의하기</a>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-slate-800 text-center text-xs">
+                © 2024 시니어라이프 플랫폼. All rights reserved. 액티브 시니어를 위한 디자인.
+            </div>
+</footer>
+</div>
+</div>
+
+</body></html>
