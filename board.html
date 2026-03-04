@@ -25,6 +25,9 @@
             border: 1px solid #F1F5F9;
             box-shadow: var(--card-shadow);
         }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
     </style>
 <script>
         tailwind.config = {
@@ -114,9 +117,130 @@
 </button>
 </header>
 
+<div class="flex flex-col md:flex-row gap-4 items-center mb-8">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-coral text-3xl">search</span>
+<input class="w-full h-16 pl-16 pr-6 rounded-2xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-xl focus:ring-2 focus:ring-coral/50 placeholder:text-slate-400" placeholder="궁금한 내용을 검색해보세요" type="text"/>
+</div>
+</div>
+
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar mb-8">
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-navy dark:bg-white text-white dark:text-navy font-bold text-lg shadow-md">전체</button>
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-800 transition-colors">자유게시판</button>
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-800 transition-colors">동네 소식</button>
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-800 transition-colors">정보 공유</button>
+<button class="whitespace-nowrap px-8 py-3 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-800 transition-colors">건강 고민</button>
+</div>
+
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-10">
+<div class="xl:col-span-8 flex flex-col gap-8">
+
+<article class="bg-white dark:bg-slate-900 rounded-premium p-8 premium-card hover:shadow-lg transition-shadow">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<img class="size-14 rounded-full object-cover" alt="Elderly man profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATHXCXZW7duhCs0Nracn4eEtWJIXbIESL8Onk8UYv-CYi2KLF3rRzJXULXFpGXF0yOpE5beLwUe-gZcSr9ZDOX5q2ilHEbq8TD7KBIjbCLfUDExH9n-Kd0uczspN5pZMHLv38bkW6bBoKYKmVkeq4THB7PORI5klBV4Oif-NdnCgUnPaDpUHpDFiphEjrI57AzJ_qwE7b2XjFn-MT8ixLk_jS1sugjcgGlGzbjYFKVDJ-7QSNP8MsOIAxvTVblmkn6-_NF8n0PvSEu"/>
+<div>
+<h4 class="font-bold text-xl">행복한 산책가</h4>
+<p class="text-slate-400 text-sm">15분 전 · 자유게시판</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-navy">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<h3 class="text-2xl font-extrabold mb-4 leading-snug">오늘 남산 둘레길 같이 걸으실 분 계신가요?</h3>
+<p class="text-slate-600 dark:text-slate-300 text-xl leading-relaxed mb-6">날씨가 너무 좋아서 집에만 있기 아깝네요. 오후 2시에 국립극장 쪽에서 만나서 천천히 한 바퀴 돌고 시원한 냉면 한 그릇 하실 분들 댓글 남겨주세요!</p>
+<div class="w-full aspect-video rounded-2xl overflow-hidden mb-6 bg-slate-100">
+<img class="w-full h-full object-cover" alt="Beautiful walking path in Namsan park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4JYT3mK-cX55PPQYww04NZytmyfeBLIbwXJ1xOp_QTsrXFnRYmIp34yqw-cxf0LijhOkx8ZUVMeWVBV8M6qN5LH3VYwBgiGPNuyd6C6Z07HKP6NcqEGKJOptLvRy1c0Yt6Uq4zsPIHsQXswPWg5RHQ78HeLAs6EyvGA7aPEuXsnjkchzDKjXeEQIikBkAnzNIsDgdIA1gvK_jIkXM0PThmsbaicPxBWg904FNehHK01NyZ5NZTmWuPf5Fu4Qmmhkj-ug5ZoGWMMVC"/>
+</div>
+<div class="flex items-center gap-6 pt-6 border-t border-slate-100 dark:border-slate-800">
+<button class="flex items-center gap-2 px-5 py-3 rounded-2xl bg-coral-light/50 text-coral hover:bg-coral-light transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-bold text-lg">좋아요 12</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-bold text-lg">댓글 5</span>
+</button>
+</div>
+</article>
+
+<article class="bg-white dark:bg-slate-900 rounded-premium p-8 premium-card hover:shadow-lg transition-shadow">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<img class="size-14 rounded-full object-cover" alt="Senior woman profile picture smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDdtcw33ecPFCsGxH3nk3TK_d2jqUUhq2BJgES8gu05xITG7L8gKGsFWVARLEwH6NZjOPl1jPbytprBRTZV94nhc9oMX6DYkJ3Kya6DLKsC6utB2RDZgYukBVPvPEEZulBWErr9k6SeoBrQGuiJZmtigyaAUOQLCg_Ut1-ekfhb9jT0O73nExW5aXEO988xrgABHLWytT3APyySC8TulkZuHsfMiDNJY5QqJTbFXZzAnO5CjzFmsK1DMQVfPcT2he2dhDVyhVM80eY"/>
+<div>
+<h4 class="font-bold text-xl">꽃할매 정원사</h4>
+<p class="text-slate-400 text-sm">1시간 전 · 정보 공유</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-navy">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<h3 class="text-2xl font-extrabold mb-4 leading-snug">베란다에서 상추 키우는 꿀팁 공유합니다</h3>
+<p class="text-slate-600 dark:text-slate-300 text-xl leading-relaxed mb-6">벌써 세 번째 수확했어요! 가장 중요한 건 통풍과 물주기 시간인 것 같아요. 제가 정리한 몇 가지 노하우 보시고 다들 싱싱한 상추 키워보세요.</p>
+<div class="flex items-center gap-6 pt-6 border-t border-slate-100 dark:border-slate-800">
+<button class="flex items-center gap-2 px-5 py-3 rounded-2xl bg-coral-light/50 text-coral hover:bg-coral-light transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-bold text-lg">좋아요 28</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-bold text-lg">댓글 14</span>
+</button>
+</div>
+</article>
+</div>
+
+<aside class="xl:col-span-4 flex flex-col gap-8">
+<div class="bg-white dark:bg-slate-900 rounded-premium p-6 premium-card">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-extrabold text-navy dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-coral">local_fire_department</span>
+                인기 게시글
+            </h3>
+<a class="text-sm font-bold text-coral" href="#">전체보기</a>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-100">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" alt="Cozy restaurant interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW2PFwt2x3Qr5o13NJlLR_SApDRcTStSqpndiRavQGS7oCD5eyMlaWYtYlMzQtlnN835IA3hZvBr2MhKE2wwPxDNdzIR1s2AW7FTNyX-1nJfg2wgeumWchB2Al9UBf0nrXkrpZDejypK8MCSaFZ2iHC0Bghqu57g3x27ci4uCceJdGWrxdp2qc_uQ8oiII7sEG1LABEfoG14twLNNA_nMOkYuqOKgp7IQSzk3B3zsonzc7zdbEDNHAMxxtVk68mBJ4dK4AvxHD6074"/>
+</div>
+<div class="flex flex-col justify-center">
+<p class="font-bold text-lg line-clamp-2 leading-snug">우리 동네 새로 생긴 냉면집 진짜 맛있네요</p>
+<span class="text-slate-400 text-sm mt-1">조회수 1,240 · 댓글 42</span>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-100">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" alt="Yoga instructor posing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASGSVgAvDB6fNhHytMtizNL0YLUdht50w-FMVmd674rbGbt7OZqI4YluiZNfCAN1eQIao5h_NgkWljTVw8DGNeaZRUfeY0MXkQ45iGmIqKd5bvyROGPo2f9IahK1wjudFOYhGKJKT_Cy7Yd-suYzls4MBHtZngceROJql-ghdq3mmWQoNLSSVcHsq8Yg6xRKNOJM0_aMd9l3r43d1BKozCNvHH4dTk_WuH8uYHee5eelpVMAi0BHXVT6oryKsL6d1ptLB-wKCI-X06"/>
+</div>
+<div class="flex flex-col justify-center">
+<p class="font-bold text-lg line-clamp-2 leading-snug">시니어를 위한 아침 스트레칭 5분 요령</p>
+<span class="text-slate-400 text-sm mt-1">조회수 980 · 댓글 35</span>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-100">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" alt="Traditional Korean market food" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_on2YtAkkYXM6STC556BFgdfl1ptcPUZEBeXLLFEww7xAabunAwA6rm1fJF9RGxwnSTAGETJ4SIFnOrk48UlN15i1CgJTlUulDFfvN7XZSxTU1I4tZAOWcZI7VcVGyEpalm86K4GjEMwtGxYXpm_x8At3u5GTaMRPsHsEuGrmSpCWf4kUt-ES0gd0pmTH1w031IVRWsEFDjpbH9l9UKU9m8TjNGS8ms7k8gzYz4Dc5lcC22o0gzTJC6FpdsTDKHAwiL9dcuYe87MV"/>
+</div>
+<div class="flex flex-col justify-center">
+<p class="font-bold text-lg line-clamp-2 leading-snug">이번 주말 시장 할인 정보 모음</p>
+<span class="text-slate-400 text-sm mt-1">조회수 850 · 댓글 21</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-coral/10 dark:bg-coral/20 rounded-premium p-8 border border-coral/20">
+<h4 class="text-coral font-black text-xl mb-2">새로운 친구를 사귀어보세요!</h4>
+<p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed font-medium">관심사가 비슷한 동네 친구들과 채팅하고 모임을 가져보세요.</p>
+<button class="w-full py-4 rounded-2xl bg-coral text-white font-bold text-lg shadow-lg shadow-coral/20">모임 둘러보기</button>
+</div>
+</aside>
+</div>
 </main>
 <button class="fixed bottom-32 lg:bottom-10 right-10 w-16 h-16 bg-navy dark:bg-white text-white dark:text-navy rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 active:scale-95" onclick="document.documentElement.classList.toggle('dark')">
 <span class="material-symbols-outlined text-3xl">dark_mode</span>
 </button>
-
 </body></html>

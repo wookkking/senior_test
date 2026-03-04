@@ -105,13 +105,82 @@
 <main class="lg:ml-72 p-6 lg:p-14">
 <header class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-14">
 <div>
-<h1 class="text-5xl font-extrabold text-navy dark:text-white leading-tight">종합 <span class="text-coral">건강 리포트</span></h1>
-<p class="text-slate-500 mt-2 text-lg">오늘의 건강 상태를 한 눈에 확인하고, 목표를 설정하세요.</p>
+<h1 class="text-5xl font-extrabold text-navy dark:text-white leading-tight">매일 더 건강하게, <span class="text-coral">ActiveLife</span></h1>
+<p class="text-slate-500 mt-2 text-lg">나에게 맞는 건강 정보를 확인하고 꾸준한 습관을 만들어보세요.</p>
 </div>
-<button class="w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center premium-card">
-<span class="material-symbols-outlined text-navy dark:text-slate-300 text-3xl">print</span>
+<button class="bg-white dark:bg-slate-800 text-navy dark:text-white font-bold py-5 px-10 rounded-2xl flex items-center gap-3 transition-all group shadow-lg premium-card hover:shadow-xl">
+<span class="material-symbols-outlined text-coral">add_circle</span>
+<span class="text-xl">나의 건강 기록하기</span>
 </button>
 </header>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-14">
+<div class="lg:col-span-2 bg-navy dark:bg-slate-800 rounded-premium p-10 flex flex-col justify-between text-white">
+<div>
+<span class="bg-coral/20 text-coral font-semibold text-xs uppercase tracking-widest px-4 py-2 rounded-full self-start">오늘의 건강 팁</span>
+<h3 class="text-3xl font-extrabold mt-6 mb-4">충분한 수분 섭취의 중요성</h3>
+<p class="text-slate-300 text-lg leading-relaxed">하루 8잔의 물은 신진대사를 활발하게 하고, 피부 건강과 피로 해소에 도움을 줍니다. 맹물 마시기가 힘들다면 레몬이나 오이를 넣어 향을 더해보세요.</p>
+</div>
+<a href="#" class="mt-8 text-coral font-bold flex items-center gap-2 group">
+<span>자세히 알아보기</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="bg-coral rounded-premium p-10 flex flex-col justify-between text-white">
+<div>
+<h3 class="text-3xl font-extrabold mb-4">주간 챌린지: <br/>하루 7천보 걷기</h3>
+<p class="text-white/80 leading-relaxed">이번 주 목표 달성까지 앞으로 3일! 꾸준한 걷기는 심혈관 건강 개선에 매우 효과적입니다.</p>
+</div>
+<div class="mt-8">
+<div class="w-full bg-white/20 rounded-full h-3 mb-2">
+<div class="bg-white rounded-full h-3" style="width: 57%"></div>
+</div>
+<p class="text-sm text-right font-semibold">57% 달성</p>
+</div>
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-14">
+<div class="bg-white dark:bg-slate-900 rounded-premium p-8 premium-card">
+<h3 class="text-2xl font-extrabold mb-6 flex items-center gap-3"><span class="material-symbols-outlined text-3xl text-coral">calculate</span>건강 계산기</h3>
+<div class="space-y-4">
+<div>
+<label for="bmi-weight" class="font-bold text-lg">체질량지수 (BMI)</label>
+<div class="flex gap-4 mt-2">
+<input type="number" id="bmi-weight" placeholder="몸무게 (kg)" class="w-full p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 focus:ring-coral/50"/>
+<input type="number" id="bmi-height" placeholder="신장 (cm)" class="w-full p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 focus:ring-coral/50"/>
+</div>
+<button class="w-full mt-4 bg-navy text-white font-bold py-4 rounded-xl hover:bg-navy-light transition-colors">계산하기</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-premium p-8 premium-card">
+<h3 class="text-2xl font-extrabold mb-6 flex items-center gap-3"><span class="material-symbols-outlined text-3xl text-coral">receipt_long</span>전문가 칼럼</h3>
+<ul class="space-y-5">
+<li class="group"><a href="#" class="flex items-center justify-between">
+<div>
+<p class="font-bold text-lg group-hover:text-coral transition-colors">시니어 눈 건강, 어떻게 지킬까?</p>
+<p class="text-slate-500 text-sm">김안과 의원 | 김태형 원장</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a></li>
+<li class="group"><a href="#" class="flex items-center justify-between">
+<div>
+<p class="font-bold text-lg group-hover:text-coral transition-colors">퇴행성 관절염, 예방과 관리의 모든 것</p>
+<p class="text-slate-500 text-sm">튼튼 정형외과 | 박찬호 원장</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a></li>
+<li class="group"><a href="#" class="flex items-center justify-between">
+<div>
+<p class="font-bold text-lg group-hover:text-coral transition-colors">꿀잠을 위한 5가지 수면 습관</p>
+<p class="text-slate-500 text-sm">코잠 수면 클리닉 | 이수민 원장</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a></li>
+</ul>
+</div>
+</div>
 
 </main>
 <button class="fixed bottom-32 lg:bottom-10 right-10 w-16 h-16 bg-navy dark:bg-white text-white dark:text-navy rounded-full shadow-2xl flex items-center justify-center z-50 transition-all hover:scale-110 active:scale-95" onclick="document.documentElement.classList.toggle('dark')">
