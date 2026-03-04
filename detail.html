@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Details</title>
+  <link href="/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main-navigation></main-navigation>
+
+  <div class="container" id="user-detail-container">
+    <!-- User details will be dynamically injected here -->
+  </div>
+
+  <script type="module" src="/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const users = {
+        '1': {
+          name: 'Alex Doe',
+          title: 'Web Component Architect',
+          avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+          description: 'Alex is a seasoned architect with over 10 years of experience in building scalable and maintainable web applications. He specializes in the latest frontend technologies and is a core contributor to several open-source projects. In his spare time, he enjoys hiking and photography.',
+          socials: `
+            <a href="#"><img src="https://img.icons8.com/fluent/48/000000/github.png" alt="github"></a>
+            <a href="#"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="linkedin"></a>
+            <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="twitter"></a>
+          `
+        },
+        '2': {
+          name: 'Jane Smith',
+          title: 'UI/UX Designer',
+          avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+          description: 'Jane has a keen eye for design and a passion for creating user-centered experiences. She believes that good design is not just about aesthetics, but also about creating intuitive and accessible products for everyone. She loves to paint and visit art museums.',
+          socials: `
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/dribbble.png" alt="dribbble"></a>
+            <a href="#"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="linkedin"></a>
+          `
+        },
+        '3': {
+            name: 'Sam Wilson',
+            title: 'Frontend Developer',
+            avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
+            description: 'Sam is a frontend wizard, skilled in turning complex designs into reality with pixel-perfect precision. He is an expert in HTML, CSS, and JavaScript and is always exploring new frameworks and libraries. He is also a huge video game enthusiast.',
+            socials: `
+                <a href="#"><img src="https://img.icons8.com/fluent/48/000000/github.png" alt="github"></a>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/codepen.png" alt="codepen"></a>
+            `
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const userId = params.get('user');
+      const user = users[userId];
+      const container = document.getElementById('user-detail-container');
+
+      if (user) {
+        const userProfile = document.createElement('user-profile-card');
+        userProfile.setAttribute('name', user.name);
+        userProfile.setAttribute('title', user.title);
+        userProfile.setAttribute('avatar', user.avatar);
+        
+        const descriptionSlot = document.createElement('p');
+        descriptionSlot.setAttribute('slot', 'description');
+        descriptionSlot.textContent = user.description;
+
+        const socialsSlot = document.createElement('div');
+        socialsSlot.setAttribute('slot', 'socials');
+        socialsSlot.innerHTML = user.socials;
+
+        userProfile.appendChild(descriptionSlot);
+        userProfile.appendChild(socialsSlot);
+        container.appendChild(userProfile);
+      } else {
+        container.innerHTML = '<p class="error-message">User not found.</p>';
+      }
+    });
+  </script>
+</body>
+</html>
